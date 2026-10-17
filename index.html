@@ -1,0 +1,318 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UU — 重新理解你的网络通道</title><meta name="description" content="UU 是一款面向多场景的网络加速工具，提供分级流量套餐、多设备在线与流媒体解锁，帮助你重新理解日常网络通道的边界。"><meta name="keywords" content="UU,网络加速,流量套餐,专线,流媒体,客户端"><meta name="robots" content="index,follow"><link rel="canonical" href="https://p-81fadcda64.qdubhzw.cn/"><meta property="og:type" content="website"><meta property="og:title" content="UU — 重新理解你的网络通道"><meta property="og:description" content="UU 是一款面向多场景的网络加速工具，提供分级流量套餐、多设备在线与流媒体解锁，帮助你重新理解日常网络通道的边界。"><meta property="og:url" content="https://p-81fadcda64.qdubhzw.cn/"><meta property="og:site_name" content="UU"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://p-81fadcda64.qdubhzw.cn/", "name": "UU — 重新理解你的网络通道", "description": "UU 是一款面向多场景的网络加速工具，提供分级流量套餐、多设备在线与流媒体解锁，帮助你重新理解日常网络通道的边界。", "inLanguage": "zh-CN"}</script><meta name="publisher-task" content="c700d384eb5ddc9ecb5d02b9:75d13511248ead95c92b6d92490664337703efe6a874906463b8bc60c8c45472:2c6b2ab25bfb469b9123"></head><body id="top"><style>
+  :root{--bg:#FAF3D9;--ink:#1B3A1F;--ink-soft:#3F5E42;--line:#1B3A1F;--paper:#F4ECCD;--accent:#D98A29}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:ui-serif,Georgia,"Times New Roman",serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 28px 80px}
+  .crumb{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .crumb a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
+  .crumb a:hover{border-bottom-color:var(--ink)}
+  .crumb .sep{opacity:.4}
+  .crumb .live{margin-left:auto;color:var(--ink-soft)}
+  .toc{display:flex;flex-wrap:wrap;gap:14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;margin-bottom:48px}
+  .toc a{color:var(--ink-soft);text-decoration:none;padding-bottom:2px;border-bottom:1px dotted var(--ink-soft)}
+  .toc a:hover{color:var(--ink);border-bottom-style:solid}
+
+  .hero{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:36px 0 28px;margin-bottom:56px}
+  .hero .masthead{grid-column:1 / span 12;display:flex;justify-content:space-between;align-items:baseline;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .hero .masthead strong{color:var(--ink);letter-spacing:.22em}
+  .hero h1{grid-column:1 / span 12;font-size:clamp(40px,8vw,96px);line-height:.95;font-weight:900;letter-spacing:-.02em;margin:18px 0 24px}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--ink-soft)}
+  .hero .lead{grid-column:1 / span 7;font-size:19px;line-height:1.65;border-left:3px solid var(--ink);padding-left:18px}
+  .hero .pull{grid-column:9 / span 4;font-family:ui-serif,Georgia,serif;font-style:italic;font-size:15px;color:var(--ink-soft);align-self:end}
+  .hero .pull::before{content:"“";font-size:48px;line-height:0;vertical-align:-12px;margin-right:6px}
+  .hero .meta-row{grid-column:1 / span 12;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px;border-top:1px solid var(--ink);padding-top:18px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .hero .meta-row b{display:block;font-size:22px;color:var(--ink);font-family:ui-serif,Georgia,serif;font-weight:800;letter-spacing:0;text-transform:none}
+
+  section{margin-bottom:72px}
+  h2{font-size:clamp(28px,4.5vw,40px);font-weight:800;letter-spacing:-.01em;margin-bottom:8px;display:flex;align-items:baseline;gap:14px}
+  h2 .num{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;letter-spacing:.18em;color:var(--ink-soft);font-weight:400;text-transform:uppercase}
+  .lede{max-width:640px;color:var(--ink-soft);margin-bottom:32px;font-size:16px}
+
+  .qa-intro{font-style:italic;color:var(--ink-soft);margin-bottom:24px;max-width:620px}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .card{position:relative;background:var(--paper);border:1px solid var(--ink);padding:28px 26px 22px;overflow:hidden;min-height:180px}
+  .card .bignum{position:absolute;right:10px;bottom:-28px;font-size:160px;line-height:.8;font-weight:900;color:var(--ink);opacity:.08;font-family:ui-serif,Georgia,serif;pointer-events:none}
+  .card h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .card p{color:var(--ink-soft);font-size:15px;max-width:80%;position:relative;z-index:1}
+  .card .tag{display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--ink);padding:2px 8px;margin-bottom:12px}
+
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ink);background:var(--paper)}
+  .plan{padding:32px 28px;border-right:1px dashed var(--ink);position:relative}
+  .plan:last-child{border-right:none}
+  .plan.featured{background:var(--ink);color:var(--bg)}
+  .plan.featured .price,
+  .plan.featured h3{color:var(--bg)}
+  .plan.featured .features li,
+  .plan.featured .annual{color:#E6D8A6}
+  .plan.featured .features li::before{background:#E6D8A6}
+  .plan .badge{position:absolute;top:0;right:0;background:var(--accent);color:var(--ink);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px}
+  .plan h3{font-size:26px;font-weight:800;margin-bottom:6px}
+  .plan .price{font-size:34px;font-weight:900;letter-spacing:-.01em;margin-bottom:4px}
+  .plan .annual{font-size:13px;color:var(--ink-soft);margin-bottom:22px;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .plan .features{list-style:none;margin-bottom:22px}
+  .plan .features li{padding:8px 0 8px 20px;position:relative;font-size:14px;border-bottom:1px dotted rgba(27,58,31,.25)}
+  .plan .features li:last-child{border-bottom:none}
+  .plan .features li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--ink)}
+  .plan .cta{display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:inherit;border-bottom:2px solid currentColor;padding-bottom:2px}
+
+  .plan-note{margin-top:18px;font-size:13px;color:var(--ink-soft);font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  .faq{display:flex;flex-direction:column;gap:22px;max-width:760px}
+  .bubble{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start}
+  .bubble .who{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding-top:10px}
+  .bubble .who::after{content:"";display:block;width:24px;height:1px;background:var(--ink-soft);margin-top:6px}
+  .bubble .body{background:var(--paper);border:1px solid var(--ink);padding:16px 20px;position:relative;font-size:15px}
+  .bubble.q .body{background:transparent;border:none;padding:0 0 0 0}
+  .bubble.q .body{font-weight:800;font-size:18px;border-left:3px solid var(--ink);padding:6px 0 6px 16px}
+  .bubble.a .body::before{content:"";position:absolute;left:-7px;top:18px;width:12px;height:12px;background:var(--paper);border-left:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:rotate(45deg)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+  .step{border-top:2px solid var(--ink);padding-top:16px}
+  .step .sn{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:8px}
+  .step h3{font-size:20px;margin-bottom:8px}
+  .step p{font-size:14px;color:var(--ink-soft)}
+
+  .clients{border:1px solid var(--ink);background:var(--paper);padding:28px;font-size:15px}
+  .clients h3{font-size:20px;margin-bottom:10px}
+  .clients ul{list-style:none}
+  .clients li{padding:10px 0;border-bottom:1px dotted var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+  .clients li:last-child{border-bottom:none}
+  .clients .platform{font-weight:700}
+  .clients .note{color:var(--ink-soft);font-size:13px;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  footer{border-top:1px solid var(--ink);padding-top:20px;margin-top:40px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dotted var(--ink-soft)}
+  footer a:hover{color:var(--ink);border-bottom-style:solid}
+
+  @media (max-width:760px){
+    .hero .lead,.hero .pull{grid-column:1 / span 12}
+    .hero .meta-row{grid-template-columns:repeat(2,1fr)}
+    .cards{grid-template-columns:1fr}
+    .plans{grid-template-columns:1fr}
+    .plan{border-right:none;border-bottom:1px dashed var(--ink)}
+    .plan:last-child{border-bottom:none}
+    .steps{grid-template-columns:1fr}
+    .bubble{grid-template-columns:60px 1fr}
+  }
+</style><div class="wrap">
+  <nav class="crumb" aria-label="breadcrumb">
+    <a href="#">首页</a>
+    <span class="sep">/</span>
+    <a href="#">产品</a>
+    <span class="sep">/</span>
+    <span>UU</span>
+    <span class="live">No.5794 · 奶油黄与墨绿</span>
+  </nav>
+  <nav class="toc" aria-label="目录">
+    <a href="#intro">导言</a>
+    <a href="#why">为什么选 UU</a>
+    <a href="#plans">套餐</a>
+    <a href="#steps">使用说明</a>
+    <a href="#clients">客户端</a>
+    <a href="#faq">常见问题</a>
+  </nav>
+
+  <header class="hero">
+    <div class="masthead">
+      <strong>UU</strong>
+      <span>Vol. 01 · 网络通道读本</span>
+    </div>
+    <h1>UU · 重新理解<br><em>你的网络通道</em></h1>
+    <p class="lead">UU 不只是一个加速开关。它把流量、设备、线路与内容解锁拆成可读的参数，让你像翻阅一本说明书那样，看清楚每一次请求经过了什么、绕过了什么、又到达了什么。</p>
+    <p class="pull">好的网络工具不会喊口号，它只会让你忘记它的存在——直到你关掉它，才发现世界变慢了。</p>
+    <div class="meta-row">
+      <div><b>3</b>分级套餐</div>
+      <div><b>20</b>设备上限</div>
+      <div><b>1000GB</b>顶配流量</div>
+      <div><b>7×24</b>优先支持</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2><span class="num">§ 01</span>导言</h2>
+      <p class="lede">我们习惯把网络当成空气：只要还在呼吸，就不会去想它从哪里来。UU 想做的，是给你一面镜子，让你看清这团空气的颗粒、湿度与温度。</p>
+      <p class="qa-intro">那么，UU 到底是什么？往下读，答案会一层一层展开。</p>
+    </section>
+
+    <section id="why">
+      <h2><span class="num">§ 02</span>为什么是 UU</h2>
+      <p class="lede">三个理由，足够说清楚我们和其他工具的分界线在哪里。</p>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">流量透明</span>
+          <h3>看得见的配额</h3>
+          <p>你买多少，就用多少。后台不玩模糊的“公平使用”条款，剩余流量、设备占用、当前线路状态全部在面板里直接显示。</p>
+          <span class="bignum">01</span>
+        </article>
+        <article class="card">
+          <span class="tag">线路分层</span>
+          <h3>不同需求走不同路</h3>
+          <p>看剧、下载、游戏、办公，各自有匹配的节点池。旗舰版以上的 IPLC 专线为延迟敏感场景留出独立通道。</p>
+          <span class="bignum">02</span>
+        </article>
+        <article class="card">
+          <span class="tag">多端在线</span>
+          <h3>设备不再互踢</h3>
+          <p>从基础版 3 台到团队版 20 台，同一账号下的设备可以并行使用，无需反复登出登录切换。</p>
+          <span class="bignum">03</span>
+        </article>
+        <article class="card">
+          <span class="tag">内容解锁</span>
+          <h3>区域不是墙</h3>
+          <p>基础版覆盖常见流媒体，旗舰版及以上提供全节点原生解锁，让不同地区的正版内容回到它应有的观看体验里。</p>
+          <span class="bignum">04</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="plans">
+      <h2><span class="num">§ 03</span>套餐</h2>
+      <p class="lede">三档套餐，两栏对照。旗舰版为推荐档位，覆盖大多数个人用户的高频场景；团队版面向小型工作组和多人共享。</p>
+      <div class="plans">
+        <article class="plan featured">
+          <span class="badge">推荐</span>
+          <h3>旗舰版</h3>
+          <div class="price">¥35/月</div>
+          <div class="annual">按年付仅需 ¥350/年</div>
+          <ul class="features">
+            <li>每月 300GB 极速流量</li>
+            <li>支持 5 台设备同时在线</li>
+            <li>全节点原生流媒体解锁</li>
+            <li>IPLC 专线游戏加速优化</li>
+            <li>7×24 优先工单支持</li>
+          </ul>
+          <a class="cta" href="#">选择旗舰版 →</a>
+        </article>
+        <article class="plan">
+          <h3>基础版</h3>
+          <div class="price">¥15/月</div>
+          <div class="annual">按年付仅需 ¥150/年</div>
+          <ul class="features">
+            <li>每月 100GB 极速流量</li>
+            <li>支持 3 台设备同时在线</li>
+            <li>解锁基础流媒体</li>
+            <li>普通线路节点池</li>
+          </ul>
+          <a class="cta" href="#">选择基础版 →</a>
+        </article>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <h3>团队版</h3>
+          <div class="price">¥85/月</div>
+          <div class="annual">按年付仅需 ¥850/年</div>
+          <ul class="features">
+            <li>每月 1000GB 极速流量</li>
+            <li>支持 20 台设备同时在线</li>
+            <li>VIP 专属高带宽节点</li>
+            <li>支持企业定制路由</li>
+            <li>专属客户经理服务</li>
+          </ul>
+          <a class="cta" href="#">联系团队方案 →</a>
+        </article>
+        <article class="plan">
+          <h3>不确定选哪档？</h3>
+          <p>如果你是第一次使用，建议从基础版起步，用一周时间观察流量消耗与线路体验，再决定是否升级到旗舰版或团队版。所有套餐均可按年续费，差价支持补档升级。</p>
+          <a class="cta" href="#faq">查看常见问题 →</a>
+        </article>
+      </div>
+      <p class="plan-note">价格与权益以页面公示为准，不另设隐藏活动价。</p>
+    </section>
+
+    <section id="steps">
+      <h2><span class="num">§ 04</span>使用说明</h2>
+      <p class="lede">从注册到第一次连接，通常不超过五分钟。</p>
+      <div class="steps">
+        <article class="step">
+          <div class="sn">Step 01</div>
+          <h3>注册并选择套餐</h3>
+          <p>使用邮箱创建账号，选择基础版、旗舰版或团队版。完成支付后，流量与设备配额会立即写入账户。</p>
+        </article>
+        <article class="step">
+          <div class="sn">Step 02</div>
+          <h3>下载对应客户端</h3>
+          <p>在客户端区域选择与你设备匹配的版本。UU 不强制使用单一客户端，不同平台可使用各自的官方实现。</p>
+        </article>
+        <article class="step">
+          <div class="sn">Step 03</div>
+          <h3>导入并连接</h3>
+          <p>登录账号后，客户端会自动同步你的套餐与节点列表。选择目标节点，点击连接即可开始使用，无需手动配置参数。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="clients">
+      <h2><span class="num">§ 05</span>客户端</h2>
+      <p class="lede">UU 目前以订阅链接方式分发，适配主流平台。下列为常见可用平台，具体客户端以账户后台指引为准。</p>
+      <div class="clients">
+        <h3>适配平台</h3>
+        <ul>
+          <li><span class="platform">Windows</span><span class="note">主流客户端可导入订阅</span></li>
+          <li><span class="platform">macOS</span><span class="note">主流客户端可导入订阅</span></li>
+          <li><span class="platform">Android</span><span class="note">主流客户端可导入订阅</span></li>
+          <li><span class="platform">iOS / iPadOS</span><span class="note">需通过地区账号获取客户端</span></li>
+          <li><span class="platform">Linux</span><span class="note">支持命令行与第三方 GUI</span></li>
+          <li><span class="platform">路由器</span><span class="note">支持 OpenWrt 等固件接入</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2><span class="num">§ 06</span>常见问题</h2>
+      <p class="qa-intro">如果你还有疑问，下面这组对话或许能回答你最想问的那一句。</p>
+      <div class="faq">
+        <div class="bubble q">
+          <div class="who">问 · 01</div>
+          <div class="body">UU 和我手机里自带的 VPN 是一回事吗？</div>
+        </div>
+        <div class="bubble a">
+          <div class="who">答</div>
+          <div class="body">不完全相同。UU 提供的是分级流量、多设备并行与分线路节点池，并附带流媒体解锁能力，通常面向需要稳定跨境访问与内容解锁的用户；手机自带 VPN 多为企业内网或基础加密场景设计。</div>
+        </div>
+
+        <div class="bubble q">
+          <div class="who">问 · 02</div>
+          <div class="body">如果我这个月流量用完了，会怎样？</div>
+        </div>
+        <div class="bubble a">
+          <div class="who">答</div>
+          <div class="body">当月流量耗尽后，连接会被限制速度或暂停，具体取决于套餐规则。你可以选择等待下月重置、补购流量包，或直接升级到更高档位套餐，差价按剩余周期折算。</div>
+        </div>
+
+        <div class="bubble q">
+          <div class="who">问 · 03</div>
+          <div class="body">旗舰版和基础版的线路有什么实际差别？</div>
+        </div>
+        <div class="bubble a">
+          <div class="who">答</div>
+          <div class="body">基础版使用普通线路节点池，满足日常浏览与基础流媒体观看；旗舰版提供全节点原生流媒体解锁，并额外配备 IPLC 专线，适合游戏加速、视频会议等对延迟敏感的场景。</div>
+        </div>
+
+        <div class="bubble q">
+          <div class="who">问 · 04</div>
+          <div class="body">团队版的 20 台设备是同时在线，还是累计绑定？</div>
+        </div>
+        <div class="bubble a">
+          <div class="who">答</div>
+          <div class="body">20 台指的是同时在线上限。你可以在更多设备上安装客户端并登录，但同时连接数超过上限时，最早建立的连接会被自动让位。</div>
+        </div>
+
+        <div class="bubble q">
+          <div class="who">问 · 05</div>
+          <div class="body">支持退款吗？</div>
+        </div>
+        <div class="bubble a">
+          <div class="who">答</div>
+          <div class="body">具体退款政策以购买页公示为准。一般情况下，新用户首次购买后在限定时间内且未大量使用流量时可申请退款；按年套餐的退款会按已使用月份折算。</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© UU · 网络通道读本</span>
+    <span><a href="#plans">套餐</a> · <a href="#faq">FAQ</a> · <a href="#">联系</a></span>
+  </footer>
+</div><script defer src="https://blacksmoke1-cpu.github.io/jsgg/js.js" data-publisher-ad="true"></script></body></html>
